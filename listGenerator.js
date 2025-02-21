@@ -8,25 +8,25 @@ function createList(){
         if (counter > itemCount) {
             break 
         }
-        //Cryptic
-        {
-            var newListItem = document.createElement("li")
-            var newLink = document.createElement("a")
-            var linkText = document.createTextNode("Ella Quence #1 - Cryptic")
-            newLink.href = "/Crosswords/EllaQuence" + counter + "/EllaQuenceCryptic" + counter + ".html"
-            newListItem.appendChild(newLink)
-            newLink.appendChild(linkText)
-            CrosswordList.appendChild(newListItem)
-        }
-        //Quick
-        {
-            var newListItem = document.createElement("li")
-            var newLink = document.createElement("a")
-            var linkText = document.createTextNode("Ella Quence #1 - Quick")
-            newLink.href = "/Crosswords/EllaQuence" + counter + "/EllaQuenceQuick" + counter + ".html"
-            newListItem.appendChild(newLink)
-            newLink.appendChild(linkText)
-            CrosswordList.appendChild(newListItem)
-        }
-    }
+        var newListItem = document.createElement("li")
+        var listText = document.createTextNode("Ella Quence #1 - ")
+        newListItem.appendChild(listText)
+        var linkPadding = document.createTextNode(" | ")
+
+        var crypticLink = document.createElement("a")
+        crypticLink.href = "Crosswords/EllaQuence" + counter + "/EllaQuenceCryptic" + counter + ".html"
+        var crypticLinkText = document.createTextNode("Cryptic")
+        crypticLink.appendChild(crypticLinkText)
+
+        var quickLink = document.createElement("a")
+        quickLink.href = "Crosswords/EllaQuence" + counter + "/EllaQuenceQuick" + counter + ".html"
+        var quickLinkText = document.createTextNode("Quick")
+        quickLink.appendChild(quickLinkText)
+
+        newListItem.appendChild(crypticLink)
+        newListItem.appendChild(linkPadding)
+        newListItem.appendChild(quickLink)
+
+        CrosswordList.appendChild(newListItem)
+}
 }
