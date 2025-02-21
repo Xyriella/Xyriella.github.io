@@ -14,12 +14,12 @@ function createList(){
         var linkPadding = document.createTextNode(" | ")
 
         var crypticLink = document.createElement("a")
-        crypticLink.href = "Crosswords/EllaQuence" + counter + "/EllaQuenceCryptic" + counter + ".html"
+        crypticLink.href = "Crosswords/EllaQuenceCryptic" + counter + ".html"
         var crypticLinkText = document.createTextNode("Cryptic")
         crypticLink.appendChild(crypticLinkText)
 
         var quickLink = document.createElement("a")
-        quickLink.href = "Crosswords/EllaQuence" + counter + "/EllaQuenceQuick" + counter + ".html"
+        quickLink.href = "Crosswords/EllaQuenceQuick" + counter + ".html"
         var quickLinkText = document.createTextNode("Quick")
         quickLink.appendChild(quickLinkText)
 
