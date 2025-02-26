@@ -1,10 +1,9 @@
 function createList(){
     let CrosswordList = document.getElementById("CrosswordList")
-    let counter = 0
     const itemCount = 1
+    let counter = itemCount
 
-    while (true) {
-        counter ++
+    while (counter > 0) {
         if (counter > itemCount) {
             break 
         }
@@ -28,5 +27,6 @@ function createList(){
         newListItem.appendChild(quickLink)
 
         CrosswordList.appendChild(newListItem)
+        counter --
 }
 }
