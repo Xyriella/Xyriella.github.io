@@ -1,24 +1,26 @@
 function createList(){
     let CrosswordList = document.getElementById("CrosswordList")
-    const itemCount = 1
-    let counter = itemCount
+    const itemCount = 2
+    let counter = 0
+    let prevItem
 
-    while (counter > 0) {
-        if (counter > itemCount) {
-            break 
-        }
+    while (counter < itemCount) {
+        counter ++
+
         var newListItem = document.createElement("li")
-        var listText = document.createTextNode("Ella Quence #1 - ")
+        var listText = document.createTextNode("Ella-Quence #"+ counter +" - ")
         newListItem.appendChild(listText)
         var linkPadding = document.createTextNode(" | ")
 
         var crypticLink = document.createElement("a")
         crypticLink.href = "Crosswords/EllaQuenceCryptic" + counter + ".html"
+        crypticLink.className = "crosswordLink"
         var crypticLinkText = document.createTextNode("Cryptic")
         crypticLink.appendChild(crypticLinkText)
 
         var quickLink = document.createElement("a")
         quickLink.href = "Crosswords/EllaQuenceQuick" + counter + ".html"
+        quickLink.className = "crosswordLink"
         var quickLinkText = document.createTextNode("Quick")
         quickLink.appendChild(quickLinkText)
 
@@ -26,7 +28,8 @@ function createList(){
         newListItem.appendChild(linkPadding)
         newListItem.appendChild(quickLink)
 
-        CrosswordList.appendChild(newListItem)
-        counter --
-}
+        CrosswordList.insertBefore(newListItem, prevItem)
+
+        prevItem = newListItem
+    }
 }
