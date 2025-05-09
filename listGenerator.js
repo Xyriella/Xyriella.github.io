@@ -1,6 +1,6 @@
 function createList(){
     let CrosswordList = document.getElementById("CrosswordList")
-    const itemCount = 9
+    const itemCount = 10
     let counter = 0
     let prevItem
 
